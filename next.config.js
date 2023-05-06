@@ -1,9 +1,10 @@
-// @ts-check
-const {withBlitz} = require("@blitzjs/next")
+"use strict"
 
-/**
- * @type {import('@blitzjs/next').BlitzConfig}
- **/
-const config = {}
+require("ts-node").register({
+  scope: true,
+  scopeDir: __dirname,
+  swc: true,
+  transpileOnly: true,
+})
 
-module.exports = withBlitz(config)
+module.exports = require("./nextConfig.ts").config

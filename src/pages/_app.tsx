@@ -6,6 +6,7 @@ import "src/styles/globals.css"
 
 import { ChakraProvider } from "@chakra-ui/react"
 import { theme } from "src/core/theme"
+import { IntlProvider } from "src/packages/Intl"
 
 function RootErrorFallback({ error }: ErrorFallbackProps) {
   if (error instanceof AuthenticationError) {
@@ -29,11 +30,14 @@ function RootErrorFallback({ error }: ErrorFallbackProps) {
 
 function MyApp({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
+
   return (
     <ChakraProvider theme={theme}>
-      <ErrorBoundary FallbackComponent={RootErrorFallback}>
-        {getLayout(<Component {...pageProps} />)}
-      </ErrorBoundary>
+      <IntlProvider>
+        <ErrorBoundary FallbackComponent={RootErrorFallback}>
+          {getLayout(<Component {...pageProps} />)}
+        </ErrorBoundary>
+      </IntlProvider>
     </ChakraProvider>
   )
 }
