@@ -27,6 +27,7 @@
     "@blitzjs/auth": "2.0.0-beta.27",
     "@blitzjs/next": "2.0.0-beta.27",
     "@blitzjs/rpc": "2.0.0-beta.27",
+    "@chakra-ui/icons": "2.0.19",
     "@chakra-ui/react": "2.6.1",
     "@emotion/react": "11.11.0",
     "@emotion/styled": "11.11.0",
